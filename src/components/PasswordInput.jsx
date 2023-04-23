@@ -6,9 +6,8 @@ import {
   OutlinedInput,
   FormControl,
   IconButton,
-  InputLabel,
   Typography,
-  Grid,
+  Box,
 } from "@mui/material";
 
 export default function PasswordInput({ setPassword, error }) {
@@ -24,48 +23,55 @@ export default function PasswordInput({ setPassword, error }) {
   };
 
   return (
-    <Grid
+    <Box
       justifyContent="center"
       alignItems="center"
-      container
-      spacing={2}
-      width="100%"
-      mb={2}
+      display="flex"
+      // width="100%"
+      gap="24px"
     >
-      <Grid xs={4}>
-        <Typography variant="body1">My Password:</Typography>
-      </Grid>
-      <Grid xs={8}>
-        <FormControl error={error} fullWidth variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">
-            Password
-          </InputLabel>
-          <OutlinedInput
-            fullWidth
-            onChange={handlePasswordChange}
-            id="outlined-adornment-password"
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
-        </FormControl>
+      <Typography width="30%" variant="body1">
+        My Password:
+      </Typography>
+
+      <FormControl error={error} fullWidth variant="outlined">
+        <OutlinedInput
+          fullWidth
+          placeholder="Password"
+          onChange={handlePasswordChange}
+          id="outlined-adornment-password"
+          type={showPassword ? "text" : "password"}
+          sx={{
+            "& .MuiOutlinedInput-notchedOutline, &:hover .MuiOutlinedInput-notchedOutline, &.Mui-focused .MuiOutlinedInput-notchedOutline":
+              {
+                border: "2px solid #F6A95F",
+                borderRadius: "12px",
+              },
+            ".MuiOutlinedInput-notchedOutline>legend, &.MuiInputLabel-animated":
+              {
+                display: "none ",
+              },
+          }}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+                edge="end"
+              >
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          }
+          label="Password"
+        />
         {error && (
           <Typography variant="caption" color="error">
             Invalid password
           </Typography>
         )}
-      </Grid>
-    </Grid>
+      </FormControl>
+    </Box>
   );
 }

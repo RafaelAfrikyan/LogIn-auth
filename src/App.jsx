@@ -28,9 +28,9 @@ export default function App() {
       </Box>
       <Box className="terms_of_use_container">
         <Box className="terms_of_use">
-          {termsOfUseItems.map(({ title, url }) => {
+          {termsOfUseItems.map(({ title, url }, index) => {
             return (
-              <Link color="inherit" href={url} target="_blank">
+              <Link key={index} color="inherit" href={url} target="_blank">
                 {title}
               </Link>
             );

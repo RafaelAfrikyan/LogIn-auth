@@ -7,5 +7,5 @@ export const isPasswordValid = (password) => {
 };
 
 export const hasFormErrors = (error) => {
-  return error.username && error.password;
+  return error.username || error.password;
 };

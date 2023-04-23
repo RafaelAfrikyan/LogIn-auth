@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, TextField, Typography } from "@mui/material";
+import { Box, FormControl, OutlinedInput, Typography } from "@mui/material";
 
 export default function UserNameInput({ error, userName, setUserName }) {
   const handleUserNameChange = (event) => {
@@ -7,36 +7,43 @@ export default function UserNameInput({ error, userName, setUserName }) {
   };
 
   return (
-    <Grid
-      justifyContent="end"
+    <Box
+      justifyContent="flex-end"
       alignItems="center"
-      direction="row"
-      width="100%"
-      spacing={2}
-      container
-      mb={4}
+      display="flex"
+      // width="100%"
+      gap="24px"
     >
-      <Grid md={4}>
-        <Typography variant="body1">My Username:</Typography>
-      </Grid>
-      <Grid md={8}>
-        <TextField
+      <Typography width="30%" variant="body1">
+        My Username:
+      </Typography>
+      <FormControl error={error} fullWidth variant="outlined">
+        <OutlinedInput
           onChange={handleUserNameChange}
-          sx={{ borderColor: "#F6A95F" }}
           variant="outlined"
           value={userName}
-          label="Username"
+          placeholder="Username"
           margin="normal"
           error={error}
           fullWidth
+          sx={{
+            "& .MuiOutlinedInput-notchedOutline, &:hover .MuiOutlinedInput-notchedOutline, &.Mui-focused .MuiOutlinedInput-notchedOutline":
+              {
+                border: "2px solid #F6A95F",
+                borderRadius: "12px",
+              },
+            ".MuiOutlinedInput-notchedOutline>legend, &.MuiInputLabel-animated":
+              {
+                display: "none ",
+              },
+          }}
         />
-
         {error && (
           <Typography variant="caption" color="error">
             Invalid username
           </Typography>
         )}
-      </Grid>
-    </Grid>
+      </FormControl>
+    </Box>
   );
 }

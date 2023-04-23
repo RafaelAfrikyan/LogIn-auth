@@ -52,16 +52,24 @@ export default function LogInForm() {
       <Typography sx={logInTitle} margin="auto" mb={3}>
         GET LOVELY CUTIES IN YOUR AREA!
       </Typography>
-      <UserNameInput
-        error={error.username}
-        userName={userName}
-        setUserName={setUserName}
-      />
-      <PasswordInput
-        error={error.password}
-        password={password}
-        setPassword={setPassword}
-      />
+      <Box
+        width="100%"
+        display="flex"
+        flexDirection="column"
+        gap="20px"
+        mb="20px"
+      >
+        <UserNameInput
+          error={error.username}
+          userName={userName}
+          setUserName={setUserName}
+        />
+        <PasswordInput
+          error={error.password}
+          password={password}
+          setPassword={setPassword}
+        />
+      </Box>
       <LogInButton
         isLogInButtonDisabled={isLogInButtonDisabled}
         onClick={handleFormSubmit}
