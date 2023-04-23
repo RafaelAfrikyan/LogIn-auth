@@ -1,6 +1,44 @@
-.App {
-  width: 100vw;
-  height: 100vh;
+body p {
+  font-family: "Manrope" !important;
+}
+.wrapper {
   background: linear-gradient(rgba(239, 226, 214, 0.2) 0%, #efe2d6 100%);
-  /* background-color: red; */
+  padding: 50px 78px 50px 150px;
+  height: auto;
+}
+.logo {
+  margin-left: calc(100% - 216px);
+}
+
+.content_pics {
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+}
+.content_pics img:nth-child(1) {
+  max-height: 340px;
+  max-width: 270px;
+}
+.content_pics img:nth-child(2) {
+  transform: rotate(1.19deg);
+  max-width: 240px;
+  margin-top: 64px;
+}
+.terms_of_use {
+  display: flex;
+  gap: 40px;
+}
+.terms_of_use_container {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 50%;
+  gap: 8px;
+}
+
+.terms_of_use > a {
+  color: #3e352f;
 }
