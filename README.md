@@ -3,5 +3,5 @@
 ```js
 1. Create .env file in root
    - Add variable such exists in .env.example
-     - Pass to that variable right API without the word in url after the last slash
+     - Pass to that variable right API without the word after the last slash
 ```
