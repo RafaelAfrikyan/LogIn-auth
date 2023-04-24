@@ -13,9 +13,10 @@ export default function LogInButton({ onClick, isLogInButtonDisabled }) {
         borderRadius: "12px",
         color: "#3E352F",
         width: "115px",
+        height: "42px",
       }}
     >
-      Log In
+      Login
     </Button>
   );
 }

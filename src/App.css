@@ -17,17 +17,16 @@ body p {
   display: flex;
   width: 100%;
 }
-.content_pics img:nth-child(1) {
-  max-height: 340px;
-  max-width: 270px;
-}
+
 .content_pics img:nth-child(2) {
   transform: rotate(1.19deg);
-  max-width: 240px;
+  margin-left: -52px;
   margin-top: 64px;
 }
 .terms_of_use {
+  justify-content: center;
   display: flex;
+  width: 100%;
   gap: 40px;
 }
 .terms_of_use_container {
